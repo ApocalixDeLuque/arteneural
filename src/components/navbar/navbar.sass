@@ -1,0 +1,117 @@
+.an__navbar
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 2rem 4rem
+    gap: 1rem
+    font-family: var(--font-family)
+    margin: 1rem
+    background: var(--color-bg-light_2)
+    border-radius: 10px
+
+    &-links
+        flex: 1
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        &_logo
+            display: flex
+            justify-content: space-between
+            align-items: center
+            gap: 2rem
+
+            & img
+                transform: scaleX(-1)
+                width: 60px
+                height: 60px
+                cursor: pointer
+            
+            & p
+                font-family: var(--font-family)
+                font-size: 24px
+                font-weight: 800
+                cursor: pointer
+                color: var(--gradient-bar)
+
+                background: var(--gradient-text-light)
+                background-clip: text
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                &:hover
+                    
+            /*
+                &:hover .default
+                    display: none
+                &:hover .hovered:before
+                    content:"ArteNeur A.I." 
+                */
+        &_container
+            display: flex
+            flex-direction: row
+            justify-content: flex-end
+            align-items: center
+            gap: 1rem
+            padding-right: 2rem
+            padding-left: 2rem
+            width: 100%
+            & p:hover
+                color: var(--color-text-light_2)
+    &-sign
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        gap: 1rem
+        
+        & p
+            cursor: pointer
+            &:hover
+                color: var(--color-text-light_2)
+        
+        & button
+            cursor: pointer
+            padding: 0.5rem 1rem
+            border-radius: 10px
+            font-family: var(--font-family)
+            font-size: 16px
+            border: none
+            transition: all 0.2s ease-in-out
+            &:hover
+                color: var(--color-text-dark_1)
+                background: var(--color-bg-dark_1)
+
+    &-menu
+        display: none
+        background: var(--color-bg-dark_1)
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        padding: 1rem
+        gap: 1rem
+        &_container
+            &-login
+                display: flex
+                flex-direction: column
+                justify-content: center
+                gap: 1rem
+
+@media screen and (max-width: 800px)
+    .an__navbar
+        padding: 2rem 4rem
+        &-links
+            &_container
+                display: none
+        &-menu
+            display: flex
+            &_container-login
+                    display: none
+
+@media screen and (max-width: 550px)
+    .an__navbar
+        padding: 2rem 2rem
+        &-links
+            &_container
+                display: none
+        &-sign
+            display: none

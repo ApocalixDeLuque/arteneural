@@ -1,12 +1,12 @@
 import React from 'react'
 import './tutorial.sass'
 
-const tutorial = () => {
+const Tutorial = () => {
   return (
     <div>
-        
+      tutorial
     </div>
   )
 }
 
-export default tutorial
+export default Tutorial

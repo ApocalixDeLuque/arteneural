@@ -4,7 +4,7 @@ import './info.sass'
 const Info = () => {
   return (
     <div>
-        
+        .   .   info
     </div>
   )
 }

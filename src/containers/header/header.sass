@@ -1,0 +1,54 @@
+.an__header
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 1rem
+    background: var(--color-bg-light_2)
+    padding: 3rem
+    border: 1px
+    border-radius: 10px
+    font-family: var(--font-family)
+
+    &-content
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        
+        &__moving-text
+            padding-top: 2rem
+            -webkit-animation: an__header-content__moving-text 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+            animation: an__header-content__moving-text 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+@-webkit-keyframes an__header-content__moving-text
+  0%
+    letter-spacing: 1em
+    -webkit-transform: translateZ(300px)
+    transform: translateZ(300px)
+    -webkit-filter: blur(12px)
+    filter: blur(12px)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateZ(12px)
+    transform: translateZ(12px)
+    -webkit-filter: blur(0)
+    filter: blur(0)
+    opacity: 1
+
+@keyframes an__header-content__moving-text
+  0%
+    letter-spacing: 1em
+    -webkit-transform: translateZ(300px)
+    transform: translateZ(300px)
+    -webkit-filter: blur(12px)
+    filter: blur(12px)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateZ(12px)
+    transform: translateZ(12px)
+    -webkit-filter: blur(0)
+    filter: blur(0)
+    opacity: 1
