@@ -1,15 +1,14 @@
 import React from 'react'
-import MainLayout from '../layout/MainLayout'
 import '../styles/_main.sass'
 
-const Register = () => {
+const e404 = () => {
   return (
     <MainLayout>
       <div>
-        blog
+        error
       </div>
     </MainLayout>
   )
 }
 
-export default Register
+export default e404

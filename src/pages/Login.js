@@ -1,12 +1,12 @@
 import React from 'react'
 import MainLayout from '../layout/MainLayout'
-import '../app.sass'
+import '../styles/_main.sass'
 
 const Login = () => {
   return (
     <MainLayout>
       <div>
-        asd
+        inicia sesion porfa
       </div>
     </MainLayout>
   )

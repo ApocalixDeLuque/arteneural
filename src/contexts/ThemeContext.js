@@ -1,11 +1,25 @@
-import { createContext } from "react";
+import { useState, useEffect } from 'react';
 
-export const themes = {
-  dark: "",
-  light: "white-content",
+export const useTheme = () => {
+  const [theme, setTheme] = useState(getInitialTheme());
+
+  useEffect(() => {
+    saveTheme(theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  };
+
+  function getInitialTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? savedTheme : 'light';
+  }
+
+  function saveTheme(theme) {
+    localStorage.setItem('theme', theme);
+  }
+
+  return { theme, toggleTheme };
 };
-
-export const ThemeContext = createContext({
-    theme: themes.dark,
-  changeTheme: () => {},
-});

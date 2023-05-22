@@ -1,11 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 import App from "./App";
 import Tests from "./pages/Tests";
 import Login from "./pages/Login";
-
-import "./index.sass";
+import Register from "./pages/Register";
 
 import {
     createBrowserRouter,
@@ -25,9 +24,15 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login/>,
     },
+    {
+        path: "/register",
+        element: <Register/>,
+    },
 ]);
 
-ReactDOM.render(
-        <RouterProvider router={router}/>,
-    document.getElementById('root'),
-  );
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <RouterProvider router={router}/>
+  </React.StrictMode>
+);

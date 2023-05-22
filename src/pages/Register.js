@@ -6,7 +6,7 @@ const Register = () => {
   return (
     <MainLayout>
       <div>
-        blog
+        dame todos tus datos personales :D
       </div>
     </MainLayout>
   )
