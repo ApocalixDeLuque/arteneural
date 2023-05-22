@@ -3,7 +3,7 @@ import './header.sass'
 
 const Header = () => {
   return (
-    <div className='an__header section__padding'>
+    <div className='an__header'>
       <div className='an__header-content'>
         <h1>ArteNeurAI</h1>
         <div className='an__header-content__moving-text'>

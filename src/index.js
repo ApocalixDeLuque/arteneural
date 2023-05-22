@@ -6,6 +6,8 @@ import Tests from "./pages/Tests";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
+import { ThemeProvider } from "./contexts/ThemeContext";
+
 import {
     createBrowserRouter,
     RouterProvider,
@@ -33,6 +35,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <ThemeProvider>
+        <RouterProvider router={router}/>
+    </ThemeProvider>
   </React.StrictMode>
 );

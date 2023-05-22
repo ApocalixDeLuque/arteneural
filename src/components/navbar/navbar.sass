@@ -3,22 +3,48 @@
 .light-mode
     .an__navbar
         background: $light
+        color: $dark
+        &-sign button
+            &:hover
+                background: $light-mid
+
 
 .dark-mode
     .an__navbar
         background: $dark-low
+        color: $light
+        &-sign button
+            background: $dark-mid
+            color: $light
+            &:hover
+                background: $gray
+                color: $light
+        &-links_logo
+            -webkit-filter: invert(100%)
+            filter: invert(100%)
+
+
 
 .an__navbar
+    display: flex
+    justify-content: center
+    align-items: center
     padding: 2rem 4rem
     gap: 1rem
     font-family: $font-family
     margin: 1rem
     border-radius: 10px
+    width: 90vw
 
     &-links
+        display: flex
+        align-items: center
         flex: 1
 
         &_logo
+            display: flex
+            justify-content: center
+            align-items: center
             gap: 2rem
 
             & img
@@ -54,7 +80,9 @@
             padding-left: 2rem
             width: 100%
             & p:hover
-                color: $gray
+                color: $gray-mid
+
+
     &-sign
         display: flex
         flex-direction: row
@@ -65,18 +93,15 @@
         & p
             cursor: pointer
             &:hover
-                color: $gray
+                color: $gray-mid
         
         & button
-            cursor: pointer
+            font-size: 16px
             padding: 0.5rem 1rem
             border-radius: 10px
-            font-size: 16px
             border: none
-            transition: all 0.2s ease-in-out
-            // &:hover
-            //     color: $light-low
-            //     background: $dark
+            cursor: pointer
+
 
     &-menu
         display: none
@@ -92,7 +117,8 @@
                 justify-content: center
                 gap: 1rem
 
-@media screen and (max-width: 800px)
+
+@media screen and (max-width: 900px)
     .an__navbar
         padding: 2rem
         &-links
@@ -103,7 +129,7 @@
             &_container-login
                     display: none
 
-@media screen and (max-width: 550px)
+@media screen and (max-width: 600px)
     .an__navbar
         padding: 2rem
         &-links

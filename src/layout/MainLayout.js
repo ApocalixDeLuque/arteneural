@@ -1,23 +1,25 @@
-import React from 'react'
-import { Navbar } from '../components'
-import { RiLightbulbFlashFill, RiLightbulbFlashLine } from 'react-icons/ri'
-import '../styles/_main.sass'
-import './mainlayout.sass'
-import { useTheme } from '../contexts/ThemeContext.js';
+import React, { useContext } from 'react';
 
-const MainLayout = ({children}) => {
-  const { theme, toggleTheme } = useTheme();
+import { RiLightbulbFlashFill } from 'react-icons/ri';
+import ThemeContext from '../contexts/ThemeContext';
+import { Navbar } from '../components';
+import '../styles/_main.sass';
+import './mainlayout.sass';
+
+const MainLayout = ({ children }) => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
-  <div className={theme === 'light' ? 'light-mode' : 'dark-mode'}>
-    <button className='an__btn' onClick={toggleTheme}> <RiLightbulbFlashFill color={theme === 'light' ? '#000' : '#fff'} size={27}/> </button>
-    <div>
-      <Navbar/>
-      <div>
-        {children}
+    <div className={theme === 'light' ? 'light-mode' : 'dark-mode'}>
+      <button className='an__btn' onClick={toggleTheme}>
+        <RiLightbulbFlashFill color={theme === 'light' ? '#000' : '#fff'} size={27} />
+      </button>
+      <div className='an__layout'>
+        <Navbar />
+        <div>{children}</div>
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;
