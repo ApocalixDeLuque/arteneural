@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react'
-import { RiMenuLine, RiCloseLine } from 'react-icons/ri';
+import React, { useContext } from 'react'
+import { RiMenuLine} from 'react-icons/ri';
 import { Link } from 'react-router-dom'
 import ThemeContext from '../../contexts/ThemeContext';
 
@@ -16,7 +16,6 @@ const Menu = () => (
 )
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false)
   const { theme} = useContext(ThemeContext);
 
   return (
@@ -32,29 +31,28 @@ const Navbar = () => {
         </div>
 
       </div>
+
       <div className='an__navbar-sign'>
         <p><Link to='/login'>Login</Link></p>
         <button type='button'><Link to='/register'>Register</Link></button>
       </div>
 
-      <div className='an__navbar-menu'>
-        {toggleMenu
-          ? <RiCloseLine color={theme === 'light' ? '#000' : '#fff'} size={27} onClick={() => setToggleMenu(false)}/>
-          : <RiMenuLine color={theme === 'light' ? '#000' : '#fff'} size={27} onClick={() => setToggleMenu(true)}/>
-        }
-        {toggleMenu && (
-          <div className='an__navbar-menu_container scale-up-center'>
-            <div className='an__navbar-menu_container'>
-              <Menu />
-                <div className='an__navbar-menu_container-login'>
-                  <p><Link to='/login'>Login</Link></p>
-                  <button type='button'><Link to='/register'>Register</Link></button>
-                </div>
-              </div>
-            </div>
-          )}
+      <div className='an__navbar-dropdown'>
+        <button className="an__navbar-dropbtn"><RiMenuLine color={theme === 'light' ? '#000' : '#fff' } size={27}/></button>
+        <div className="an__navbar-dropdown-content">
+          <p><Link to='/'>Home</Link></p>
+          <p><a href='#about'>About</a></p>
+          <p><a href='#tutorial'>Info</a></p>
+          <p><a href='#examples'>Examples</a></p>
+          <div className='an__navbar-dropdown-login'>
+            <hr className="rounded"></hr>
+            <p><Link to='/login'>Login</Link></p>
+            <button type='button'><Link to='/register'>Register</Link></button>
+          </div>
         </div>
       </div>
+
+    </div>
   )
 }
 
