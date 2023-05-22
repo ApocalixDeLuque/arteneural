@@ -11,12 +11,18 @@ const MainLayout = ({ children }) => {
 
   return (
     <div className={theme === 'light' ? 'light-mode' : 'dark-mode'}>
-      <button className='an__btn' onClick={toggleTheme}>
+
+      <button className='an__theme-btn' onClick={toggleTheme}>
         <RiLightbulbFlashFill color={theme === 'light' ? '#000' : '#fff'} size={27} />
       </button>
-      <div className='an__layout'>
+
+      <div className='an__layout-container'>
         <Navbar />
-        <div>{children}</div>
+
+        <div>
+          {children}
+        </div>
+        
       </div>
     </div>
   );
