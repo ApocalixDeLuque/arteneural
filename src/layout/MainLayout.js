@@ -13,7 +13,7 @@ const MainLayout = ({ children }) => {
     <div className={theme === 'light' ? 'light-mode' : 'dark-mode'}>
 
       <button className='an__theme-btn' onClick={toggleTheme}>
-        <RiLightbulbFlashFill color={theme === 'light' ? '#000' : '#fff'} size={27} />
+        <RiLightbulbFlashFill color={theme === 'light' ? '#28293e' : '#f8f8fa'} size={27} />
       </button>
 
       <div className='an__layout-container'>

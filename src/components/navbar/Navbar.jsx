@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
-import { RiMenuLine} from 'react-icons/ri';
-import { Link } from 'react-router-dom'
+import React, { useState, useContext, useEffect, useRef } from 'react'
+import { RiMenuLine, RiCloseFill } from 'react-icons/ri';
 import ThemeContext from '../../contexts/ThemeContext';
+import { Link } from 'react-router-dom'
 
 import logo from '../../assets/logo.png'
 import './navbar.sass'
@@ -16,7 +16,32 @@ const Menu = () => (
 )
 
 const Navbar = () => {
-  const { theme} = useContext(ThemeContext);
+
+  const { theme } = useContext(ThemeContext);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    window.addEventListener('click', handleOutsideClick);
+    return () => {
+      window.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
+
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+  const handleOutsideClick = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsDropdownOpen(false);
+    }
+  }
+  const handleDropdownClick = (event) => {
+    event.stopPropagation();
+  };
+
+
 
   return (
     <div className='an__navbar'>
@@ -37,19 +62,25 @@ const Navbar = () => {
         <button type='button'><Link to='/register'>Register</Link></button>
       </div>
 
-      <div className='an__navbar-dropdown'>
-        <button className="an__navbar-dropbtn"><RiMenuLine color={theme === 'light' ? '#000' : '#fff' } size={27}/></button>
-        <div className="an__navbar-dropdown-content">
-          <p><Link to='/'>Home</Link></p>
-          <p><a href='#about'>About</a></p>
-          <p><a href='#tutorial'>Info</a></p>
-          <p><a href='#examples'>Examples</a></p>
+      <div className='an__navbar-dropdown' onClick={handleDropdownClick}>
+
+        <button className="an__navbar-dropbtn" onClick={toggleDropdown}>
+          {isDropdownOpen ? (
+            <RiCloseFill color={theme === 'light' ? '#1c1c27' : '#f8f8fa'} size={27} />
+          ) : (
+            <RiMenuLine color={theme === 'light' ? '#1c1c27' : '#f8f8fa'} size={27} />
+          )}
+        </button>
+
+        <div ref={dropdownRef} className={`an__navbar-dropdown-content${isDropdownOpen ? ' open' : ''}`}>
+          <Menu/>
           <div className='an__navbar-dropdown-login'>
             <hr className="rounded"></hr>
             <p><Link to='/login'>Login</Link></p>
             <button type='button'><Link to='/register'>Register</Link></button>
           </div>
         </div>
+
       </div>
 
     </div>
