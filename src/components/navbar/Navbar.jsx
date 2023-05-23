@@ -9,9 +9,9 @@ import './navbar.sass'
 const Menu = () => (
   <>
     <p><Link to='/'>Home</Link></p>
-    <p><a href='#about'>About</a></p>
-    <p><a href='#tutorial'>Info</a></p>
-    <p><a href='#examples'>Examples</a></p>
+    <p><Link to='/#about'>About</Link></p>
+    <p><Link to='/#info'>Info</Link></p>
+    <p><Link to='/examples'>Examples</Link></p>
   </>
 )
 

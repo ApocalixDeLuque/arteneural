@@ -4,14 +4,9 @@
     flex-direction: column
     justify-content: center
     align-items: center
-    gap: 1rem
-    padding: 3rem
-    border: 1px
-    border-radius: 10px
     font-family: $font-family
     width: 100vw
-    height: 100vh
-
+    height: 110vh
     &-content
         display: flex
         flex-direction: column
@@ -19,8 +14,10 @@
         align-items: center
         & h1
           font-family: $font-family-2
+          font-size: 42px
         
         &__moving-text
+            font-size: 18px
             padding-top: 2rem
             -webkit-animation: an__header-content__moving-text 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
             animation: an__header-content__moving-text 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both

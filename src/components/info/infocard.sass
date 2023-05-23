@@ -1,0 +1,30 @@
+@use '../../styles/main.sass' as *
+
+.light-mode
+    .an__info-container
+        &:hover   
+            background: $gs-300
+    
+.dark-mode
+    .an__info-container
+        &:hover   
+            background: $gs-800
+    
+.an__info-container
+    flex: 1
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    gap: 1rem
+    padding-top: 2rem
+    font-family: $font-family
+    text-align: center
+    &:hover
+        border-radius: 0.5rem
+    &__title
+        font-size: 1rem
+        font-weight: 700
+        margin-bottom: 1rem
+    &__text
+        padding: 1rem
