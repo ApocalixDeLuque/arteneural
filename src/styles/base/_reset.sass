@@ -14,17 +14,21 @@ a
 	color: unset
 	text-decoration: none
 
+button
+	text-decoration: none
+
 .gradient
 	&__bg 
-		//TODO actually put good bg colors
-		background: radial-gradient(circle at 3% 25%, rgba(76, 175, 80, 1) 0%, rgba(49, 220, 255, 1) 100%)
-		background: -o-radial-gradient(circle at 3% 25%, rgba(76, 175, 80, 1) 0%, rgba(49, 220, 255, 1) 100%)
-		background: -ms-radial-gradient(circle at 3% 25%, rgba(76, 175, 80, 1) 0%, rgba(49, 220, 255, 1) 100%)
-		background: -moz-radial-gradient(circle at 3% 25%, rgba(76, 175, 80, 1) 0%, rgba(49, 220, 255, 1) 100%)
-		background: -webkit-radial-gradient(circle at 3% 25%, rgba(76, 175, 80, 1) 0%, rgba(49, 220, 255, 1) 100%)
+		background: -moz-linear-gradient(45deg, #00F260 0%, #0575E6 100%)
+		background: -webkit-linear-gradient(45deg, #00F260 0%, #0575E6 100%)
+		background: -o-linear-gradient(45deg, #00F260 0%, #0575E6 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0575E6', endColorstr='#00F260', GradientType=1 )
+		background: -ms-linear-gradient(45deg, #00F260 0%, #0575E6 100%)
+		background: linear-gradient(45deg, #00F260 0%, #0575E6 100%)
+
 
 	&__text 
-		background: var($gradient-text)
+		background: var($gradient-bg-green)
 		background-clip: text
 		-webkit-background-clip: text
 		-webkit-text-fill-color: transparent

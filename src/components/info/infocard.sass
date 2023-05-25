@@ -3,28 +3,30 @@
 .light-mode
     .an__info-container
         &:hover   
-            background: $gs-300
+            color: $gs-900
+            transition: 0.2s
     
 .dark-mode
     .an__info-container
         &:hover   
-            background: $gs-800
+            color: $gs-900
+            transition: 0.2s
     
 .an__info-container
+    //padding: 2rem 0 0 0 //adds space between the top of the container and the top of the page
     flex: 1
     display: flex
     flex-direction: column
     align-items: center
     justify-content: flex-start
     gap: 1rem
-    padding-top: 2rem
     font-family: $font-family
     text-align: center
+    padding-top: 2rem
     &:hover
         border-radius: 0.5rem
     &__title
         font-size: 1rem
         font-weight: 700
-        margin-bottom: 1rem
     &__text
-        padding: 1rem
+        padding: 0 2rem 0 2rem

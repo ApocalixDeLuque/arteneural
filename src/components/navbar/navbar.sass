@@ -23,6 +23,9 @@
                 & button
                     &:hover
                         background: $light-mid
+        &-links_logo
+            & p
+                color: $green
 
 //DARK MODE                     <!-- -->
 .dark-mode
@@ -56,6 +59,8 @@
                 background: $gray
                 color: $light
         &-links_logo
+            & p
+                color: $blue
             & img
                 -webkit-filter: invert(100%)
                 filter: invert(100%)
@@ -68,7 +73,6 @@
     align-items: center
     padding: 2rem 4rem
     gap: 1rem
-    margin: 2rem
     border-radius: 10px
     font-family: $font-family
     width: 90%
@@ -95,11 +99,6 @@
                 font-size: 24px
                 font-weight: 800
                 cursor: pointer
-
-                background: $gradient-text
-                background-clip: text
-                -webkit-background-clip: text
-                -webkit-text-fill-color: transparent
         &_container
             display: flex
             flex-direction: row
@@ -111,28 +110,22 @@
             width: 100%
             & p:hover
                 color: $gray-mid
-
-
     &-sign
         display: flex
         flex-direction: row
         justify-content: center
         align-items: center
         gap: 1rem
-        
         & p
             cursor: pointer
             &:hover
                 color: $gray-mid
-        
         & button
             font-size: 16px
             padding: 0.5rem 1rem
             border-radius: 10px
             border: none
             cursor: pointer
-
-
     &-menu
         display: none
         flex-direction: row
