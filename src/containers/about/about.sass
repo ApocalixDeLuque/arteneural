@@ -7,6 +7,7 @@
     justify-content: center
     color: $gs-200
     &-title
+        width: 100%
         text-align: center
         padding-bottom: 2rem
     & h2
@@ -25,13 +26,22 @@
 
 .light-mode
     .an__about
-        transition: all 0.2s ease-in-out
-        background: $blue-dark
+        &-title
+            transition: all 0.2s ease-in-out
+            background: $blue-dark
+        &-container
+            transition: all 0.2s ease-in-out
+            background: $blue-dark
 
 .dark-mode
     .an__about
         transition: all 0.2s ease-in-out
-        background: $green
+        &-title
+            transition: all 0.2s ease-in-out
+            background: $green
+        &-container
+            transition: all 0.2s ease-in-out
+            background: $green
 
 
 
@@ -45,6 +55,7 @@
     transition: all 0.2s ease-in-out
     aspect-ratio: 960/300
     width: 100%
+    background: none
     background-repeat: no-repeat
     background-position: center
     background-size: cover
@@ -60,4 +71,3 @@
 
 .light-waves-bottom
     background-image: url(../../assets/light-waves-bottom.svg)
-
