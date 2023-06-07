@@ -21,8 +21,8 @@ const Footer = () => {
       <div className='an__footer-container'>
 
         <div className='an__footer-container_logo'>
-          <img src={logo} alt='logo'/>
-          <h2>ArteNeurAl ©</h2>
+            <img src={logo} alt='logo'/>
+          <h2>ArteNeurAl </h2>
         </div>
 
         <FooterLinks title='Acerca de' p1='Informacion' p2='Acerca de' p3='Conocenos'/>
