@@ -1,0 +1,74 @@
+@use '../../styles/main.sass' as *
+
+.light-mode
+    color: $green
+
+.dark-mode
+    color: $green
+
+
+.tutorial
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    padding: 6rem 4rem 6rem 4rem
+    &__container
+        display: flex
+        flex-direction: column
+        gap: 2rem
+        &-title
+            text-align: center
+            font-size: 2rem
+        &-content
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+            &-menu
+                display: flex
+                flex-direction: column
+                gap: 1rem
+            &-logo
+                width: 40%
+                display: flex
+                justify-content: center
+                align-items: center
+
+.tutorial__item
+    filter: brightness(50%)
+    transition: filter 0.3s ease-in-out
+    transition: visibility 0.3s ease-in-out
+    & h2
+        visibility: hidden
+    & p
+        visibility: hidden
+    &:hover
+        filter: brightness(100%)
+        transition: filter 0.3s ease-in-out
+        & h2
+            visibility: visible
+            transition: visibility 0.3s ease-in-out
+        & p
+            visibility: visible
+            transition: visibility 0.3s ease-in-out
+
+
+.tutorial__item
+    background-image: url(../../assets/poly-grid.svg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    border-radius: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 1rem
+    padding: 2rem
+    &-text
+        display: flex
+        flex-direction: column
+        gap: 1rem
+        color: $light
+        font-size: 1.5rem
+        filter: drop-shadow(0px 5px 5px $dark)

@@ -1,0 +1,61 @@
+@use '../../styles/main.sass' as *
+
+.light-mode
+    .text-color
+        color: $green
+    .examples
+        &__container
+            &-images
+                & img
+                    border: 1px solid $green
+
+.dark-mode
+    .text-color
+        color: $blue
+    .examples
+        &__container
+            &-images
+                & img
+                    border: 1px solid $blue
+
+
+.examples
+    padding: 6rem 2rem 6rem 2rem
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    
+    &__container
+        width: 60%
+        display: flex
+        flex-direction: column
+        gap: 2rem
+
+        &-title
+            font-size: 2rem
+            text-align: center
+
+        &-images
+            flex: 1
+            display: grid
+            grid-template-columns: repeat(3, 2fr)
+            grid-auto-flow: dense
+            grid-gap: 2rem
+
+            &__section
+                display: flex
+                flex-direction: column
+                gap: 2rem
+
+            & img
+                width: 100%
+                transition: filter 0.3s ease-in-out
+                transition: transform 0.3s ease-in-out
+
+                &:hover
+                    filter: brightness(50%)
+                    transition: filter 0.3s ease-in-out
+                    cursor: pointer
+                    transform: scale(1.1)
+                    transition: transform 0.3s ease-in-out
